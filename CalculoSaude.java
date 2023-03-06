@@ -6,16 +6,16 @@ public class CalculoSaude {
 	
 	
 	public static double calcularIMC(double peso, double altura) {
-		double imc;
+	      double imc;
 		
-        imc = (peso / (altura * altura));
-        return imc;
-    }
+              imc = (peso / (altura * altura));
+              return imc;
+    	}
 	
 	 public static double calcularCalorias(double peso, double altura, int idade, double sexo) {
-		 double caloriasNecessarias;
+	     double caloriasNecessarias;
 		 
-		 if (sexo == 1) {
+	     if (sexo == 1) {
 			 caloriasNecessarias = (13.75 * peso) + (5 * altura) - (6.76 * idade) + 66.5;
 	     } 
 		 else if (sexo == 0) {
@@ -29,17 +29,17 @@ public class CalculoSaude {
 	 }
 
 	 public static double calcularPercentualGordura(double imc, int idade, int sexo) {
-		 	double resultado;
+		double resultado;
 		 	
-		 	resultado = (1.20 * imc) + (0.23 * idade) - (10.8 * sexo) - 5.4;
+		resultado = (1.20 * imc) + (0.23 * idade) - (10.8 * sexo) - 5.4;
 	        return resultado;
 	 }
 	 
 	 public static double calcMassaGorda(double peso, double percentualGordura) {
-			double massaGorda; 
-			massaGorda = peso * (percentualGordura / 100);
+		double massaGorda; 
+		massaGorda = peso * (percentualGordura / 100);
 			
-			return massaGorda;
+		return massaGorda;
 	 }
 
 	 public static double calcMassaMagra(double peso, double massaGorda) {
@@ -50,22 +50,22 @@ public class CalculoSaude {
 	 }
 	 
 	public static void main(String[] args) {
-		int opcao = 0, idade, sexo;
+	   int opcao = 0, idade, sexo;
 		
-		double peso, altura, calorias, imc=0, percentualGordura, massaGorda, massaMagra;
-		Scanner scanner = new Scanner(System.in);
+	   double peso, altura, calorias, imc=0, percentualGordura, massaGorda, massaMagra;
+	   Scanner scanner = new Scanner(System.in);
         
-        do {
-            System.out.println("Escolha uma opção:");
-            System.out.println("1 - Calcular quantidade de calorias necessárias por dia");
-            System.out.println("2 - Calcular IMC (Índice de Massa Corporal)");
-            System.out.println("3 - Calcular percentual de Gordura");
-            System.out.println("4 - Calcular Massa Magra");
-            System.out.println("0 - Sair");
+          do{
+              System.out.println("Escolha uma opção:");
+              System.out.println("1 - Calcular quantidade de calorias necessárias por dia");
+              System.out.println("2 - Calcular IMC (Índice de Massa Corporal)");
+              System.out.println("3 - Calcular percentual de Gordura");
+              System.out.println("4 - Calcular Massa Magra");
+              System.out.println("0 - Sair");
             
-            opcao = scanner.nextInt();
+              opcao = scanner.nextInt();
             
-            switch (opcao) {
+              switch (opcao) {
                 case 1:
                     System.out.println("Digite seu peso (em kg):");
                     peso = scanner.nextDouble();
@@ -140,12 +140,11 @@ public class CalculoSaude {
                     
                 default:
                     System.out.println("Opção inválida!");
-            }
+              }
             
-        } while (opcao != 0);
+          }while(opcao != 0);
 
         scanner.close();
     }
 
-	
 }
